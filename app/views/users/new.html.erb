@@ -1,0 +1,12 @@
+<h1>Create User</h1>
+
+<form action= <%= users_url %> method="post">
+  <%= render "shared/auth" %>
+  <label for="email">Email: </label>
+  <input type="text" name="user[email]" value="" id="email">
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" name="user[password]" value="" id="password">
+  <br>
+  <input type="submit" value="Submit">
+</form>
