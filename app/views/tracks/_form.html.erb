@@ -31,7 +31,8 @@
          <%= track.recording_type == "bonus" ? "checked" : "" %>>
   <label for="recording_type_bonus">Bonus</label>
   <br>
-  <textarea name="track[lyrics]" rows="8" cols="40">
+  <label for="track_lyrics"></label>
+  <textarea name="track[lyrics]" rows="8" cols="40" id="track_lyrics">
     <%= track.lyrics %>
   </textarea>
   <br>

@@ -1,0 +1,13 @@
+<h3>Notes</h3>
+<% track.notes.each do |note| %>
+  <section>
+    <p>
+      <%= note.note_text %>
+      <br>
+      Submitted by: <%= User.find_by_id(note.user_id).email %>
+      <% if User.find_by_id(note.user_id) == current_user %>
+        <%= button_to("Delete note", track_note_url(track, note), method: :delete) %>
+      <% end %>
+    </p>
+  </section>
+<% end %>

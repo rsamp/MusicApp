@@ -2,15 +2,12 @@
 <p>Track Type: <%= @track.recording_type.upcase %></p>
 <h3>Lyrics</h3>
 <p>
-  <%= @track.lyrics %>
+  <%= ugly_lyrics(@track.lyrics) %>
 </p>
 
-<table>
-  <% @track.attributes.each do |key, val| %>
-    <tr><td><%= key %></td><td><%= val %></td></tr>
-  <% end %>
-</table>
-
+<%= render "notes/note", track: @track %>
+<%= render "notes/form", track: @track %>
+<br>
 <%= button_to("Edit Track", edit_track_url(@track), method: :get) %>
 <%= button_to("Delete Track", track_url(@track), method: :delete) %>
 
