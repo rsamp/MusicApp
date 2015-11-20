@@ -1,0 +1,12 @@
+<% action = band.persisted? ? band_url(band) : bands_url %>
+<% method = band.persisted? ? :patch : :post %>
+
+<h1>Band</h1>
+<form action= <%= action %> method="post">
+  <%= render "shared/auth" %>
+  <input type="hidden" name="_method" value="<%= method %>">
+  <label for="band_name">Band Name: </label>
+  <input type="text" name=band[name] value="<%= band.name %>" id="band_name" >
+  <br>
+  <input type="submit" value="Submit">
+</form>

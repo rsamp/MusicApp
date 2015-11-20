@@ -1,0 +1,19 @@
+<h1><%= @track.name %></h1>
+<p>Track Type: <%= @track.recording_type.upcase %></p>
+<h3>Lyrics</h3>
+<p>
+  <%= @track.lyrics %>
+</p>
+
+<table>
+  <% @track.attributes.each do |key, val| %>
+    <tr><td><%= key %></td><td><%= val %></td></tr>
+  <% end %>
+</table>
+
+<%= button_to("Edit Track", edit_track_url(@track), method: :get) %>
+<%= button_to("Delete Track", track_url(@track), method: :delete) %>
+
+<p>
+  Off this album: <%= link_to(@track.album.name, album_url(@track.album), method: :get) %>
+</p>

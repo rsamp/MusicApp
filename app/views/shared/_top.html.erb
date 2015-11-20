@@ -1,8 +1,8 @@
-<%= link_to("HOME", users_url, method: :create) %>
+<%= link_to("HOME", root_url, method: :get) %>
 <% if current_user %>
-  <%= current_user.email %>
-  <%= button_to("Log Out", session_url, method: :delete) %>
+  <div style="float: right"><%= current_user.email %></div>
+  <div style="float: right"><%= button_to("Log Out", session_url, method: :delete) %></div>
 <% else %>
-  <%= button_to("Log In", new_session_url, method: :get) %>
-  <%= button_to("Sign Up", new_user_url, method: :get) %>
+  <div style="float: right"><%= button_to("Log In", new_session_url, method: :get) %></div>
+  <div style="float: right"><%= button_to("Sign Up", new_user_url, method: :get) %></div>
 <% end %>

@@ -1,0 +1,13 @@
+<h1><%= @album.name %></h1>
+<p>Recording Type: <%= @album.recording_type.upcase %></p>
+
+<p>From this band: <%= link_to(@album.band.name, band_url(@album.band), method: :get) %></p>
+
+<%= button_to("Edit Album", edit_album_url(@album), method: :get) %>
+<%= button_to("Delete Album", album_url(@album), method: :delete) %>
+
+<h2>Tracks</h2>
+<% @album.tracks.each do |track| %>
+  <%= link_to(track.name, track_url(track), method: :get) %>
+  <br>
+<% end %>
